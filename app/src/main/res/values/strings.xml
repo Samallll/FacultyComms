@@ -3,10 +3,15 @@
     <string name="title">Parent Faculty Communication</string>
     <string name="staff_registration">Staff Registration</string>
     <string name="parent_registration">Parent Registration</string>
-    <string name="user">User</string>
+    <string name="user">User Name</string>
     <string name="login">Login</string>
     <string name="password">Password</string>
     <string name="staff">Staff</string>
     <string name="parent">Parent</string>
     <string name="image">Image</string>
+    <string name="faculty_name">Faculty Name</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="staff_mail_id">Email ID</string>
+    <string name="staff_password">Password</string>
+    <string name="register">Register</string>
 </resources>
