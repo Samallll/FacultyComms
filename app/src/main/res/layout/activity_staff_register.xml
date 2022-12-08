@@ -64,7 +64,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:hint="@string/staff_mail_id"
+        android:hint="@string/mail_id"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,14 +87,14 @@
         app:layout_constraintTop_toBottomOf="@+id/staff_mail_id" />
 
     <EditText
-        android:id="@+id/user_name"
+        android:id="@+id/staff_user_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:hint="@string/user"
+        android:hint="@string/user_name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,13 +112,13 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:hint="@string/staff_password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_name"
+        app:layout_constraintTop_toBottomOf="@+id/staff_user_name"
         android:importantForAutofill="no" />
 
     <Button
@@ -131,5 +131,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/staff_password" />
+
+
 
 </android.support.constraint.ConstraintLayout>

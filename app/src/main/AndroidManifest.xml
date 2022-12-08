@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FacultyComms">
         <activity
+            android:name=".Parent_Register"
+            android:exported="false" />
+        <activity
             android:name=".Staff_Register"
             android:exported="false" />
         <activity
