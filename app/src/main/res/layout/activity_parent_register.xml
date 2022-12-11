@@ -8,40 +8,23 @@
     android:background="@drawable/background_image"
     tools:context=".Parent_Register">
 
-    <TextView
-        android:id="@+id/parent_registration"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/title"
-        android:textAlignment="center"
-        android:textColor="#0D47A1"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/student_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:autofillHints="@string/student_name"
-        android:textColorHint="#000000"
         android:ems="10"
         android:hint="@string/student_name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parent_registration" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/student_roll_number"
@@ -50,7 +33,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="16dp"
-        android:autofillHints="@string/roll_no"
+        android:autofillHints="@string/student_roll_no"
         android:ems="10"
         android:hint="@string/student_roll_no"
         android:textColorHint="#000000"
