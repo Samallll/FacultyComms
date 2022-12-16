@@ -1,5 +1,6 @@
 package com.example.facultycomms;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -26,7 +27,7 @@ public class UserDbHelper extends SQLiteOpenHelper {
 
 
     // PARENT Table - column names
-    private static final String KEY_PARENT_ID = "parent_id";
+    //private static final String KEY_PARENT_ID = "parent_id";
     private static final String KEY_STUDENT_NAME = "student_name";
     private static final String KEY_ROLL_NUMBER = "roll_number";
     private static final String KEY_PARENT_NAME = "parent_name";
@@ -43,8 +44,8 @@ public class UserDbHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    private static final String CREATE_TABLE_PARENT = "CREATE TABLE " + TABLE_PARENT + "(" + KEY_PARENT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_STUDENT_NAME + " TEXT, " + KEY_ROLL_NUMBER + "INTEGER," + KEY_MOBILE + "INTEGER," + KEY_EMAIL_ID + "TEXT," + KEY_DEGREE + "TEXT," + KEY_PARENT_NAME + "TEXT," + KEY_USER_NAME + "TEXT," + KEY_PASSWORD + "TEXT);";
-    private static final String CREATE_TABLE_STAFF = "CREATE TABLE " + TABLE_STAFF + "(" + KEY_STAFF_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_STAFF_NAME + " TEXT, " + KEY_MOBILE + "INTEGER," + KEY_EMAIL_ID + "TEXT," + KEY_USER_NAME + "TEXT," + KEY_PASSWORD + "TEXT);";
+    private static final String CREATE_TABLE_PARENT = "CREATE TABLE " + TABLE_PARENT + "(" + KEY_ROLL_NUMBER + " INTEGER PRIMARY KEY," + KEY_STUDENT_NAME + " TEXT, " + KEY_MOBILE + "INTEGER," + KEY_EMAIL_ID + "TEXT," + KEY_DEGREE + "TEXT," + KEY_PARENT_NAME + "TEXT," + KEY_USER_NAME + "TEXT," + KEY_PASSWORD + "TEXT);";
+    private static final String CREATE_TABLE_STAFF = "CREATE TABLE " + TABLE_STAFF + "(" + KEY_STAFF_ID + " INTEGER PRIMARY KEY," + KEY_STAFF_NAME + " TEXT, " + KEY_MOBILE + "INTEGER," + KEY_EMAIL_ID + "TEXT," + KEY_USER_NAME + "TEXT," + KEY_PASSWORD + "TEXT);";
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -66,4 +67,35 @@ public class UserDbHelper extends SQLiteOpenHelper {
         onCreate(db);
 
     }
+
+    public void addParent(Parent parent) {
+        ContentValues values = new ContentValues();
+        values.put(KEY_STUDENT_NAME, parent.getStudent_name());
+        values.put(KEY_ROLL_NUMBER, parent.getRoll_number());
+        values.put(KEY_MOBILE, parent.getMobile());
+        values.put(KEY_EMAIL_ID, parent.getEmail_id());
+        values.put(KEY_DEGREE, parent.getDegree());
+        values.put(KEY_PARENT_NAME, parent.getParent_name());
+        values.put(KEY_USER_NAME, parent.getUser_name());
+        values.put(KEY_PASSWORD, parent.getPassword());
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.insert(TABLE_PARENT, null, values);
+        db.close();
+    }
+
+    public void addStaff(Staff staff) {
+        ContentValues values = new ContentValues();
+        values.put(KEY_STAFF_ID, staff.getStaff_id());
+        values.put(KEY_STAFF_NAME, staff.getStaff_name());
+        values.put(KEY_MOBILE, staff.getMobile());
+        values.put(KEY_EMAIL_ID, staff.getEmail_id());
+        values.put(KEY_USER_NAME, staff.getUser_name());
+        values.put(KEY_PASSWORD, staff.getPassword());
+        values.put(KEY_DEGREE, staff.getDegree());
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.insert(TABLE_STAFF, null, values);
+        db.close();
+    }
+
+
 }

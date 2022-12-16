@@ -3,7 +3,7 @@ package com.example.facultycomms;
 public class Parent {
 
     private String student_name;
-    private static int roll_number = 1;
+    private int roll_number;
     private String email_id;
     private String mobile;
     private String degree;
@@ -13,7 +13,7 @@ public class Parent {
 
     /* Constructors */
 
-    public Parent(String student_name, String email_id, String mobile, String degree, String parent_name, String user_name, String password) {
+    public Parent(String student_name, String email_id, String mobile, String degree, String parent_name, String user_name, String password, int roll_number) {
         this.student_name = student_name;
         this.email_id = email_id;
         this.mobile = mobile;
@@ -21,7 +21,7 @@ public class Parent {
         this.parent_name = parent_name;
         this.user_name = user_name;
         this.password = password;
-        roll_number++;
+        this.roll_number=roll_number;
     }
 
     public Parent(String user_name, String password) {
@@ -86,4 +86,13 @@ public class Parent {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public int getRoll_number() {
+        return roll_number;
+    }
+
+    public void getRoll_number(int roll_number) {
+        this.roll_number = roll_number;
+    }
+
 }

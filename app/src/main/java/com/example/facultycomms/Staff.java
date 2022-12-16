@@ -4,7 +4,7 @@ public class Staff {
 
     private String staff_name;
     private String email_id;
-    private static int staff_id = 1;
+    private int staff_id;
     private String mobile;
     private String degree;
     private String user_name;
@@ -12,14 +12,14 @@ public class Staff {
 
     //Constructors
 
-    public Staff(String staff_name, String email_id, String mobile, String degree, String user_name, String password) {
+    public Staff(String staff_name, String email_id, String mobile, String degree, String user_name, String password, int staff_id) {
         this.staff_name = staff_name;
         this.email_id = email_id;
         this.mobile = mobile;
         this.degree = degree;
         this.user_name = user_name;
         this.password = password;
-        staff_id++;
+        this.staff_id = staff_id;
     }
 
     public Staff(String user_name, String password) {
@@ -45,12 +45,12 @@ public class Staff {
         this.email_id = email_id;
     }
 
-    public static int getStaff_id() {
+    public int getStaff_id() {
         return staff_id;
     }
 
-    public static void setStaff_id(int staff_id) {
-        Staff.staff_id = staff_id;
+    public void setStaff_id(int staff_id) {
+        this.staff_id = staff_id;
     }
 
     public String getMobile() {
