@@ -113,18 +113,18 @@
         app:layout_constraintTop_toBottomOf="@+id/student_degree" />
 
     <EditText
-        android:id="@+id/parent_user_name"
+        android:id="@+id/parent_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="16dp"
         android:autofillHints="@string/password"
-        android:textColorHint="#000000"
         android:ems="10"
         android:hint="@string/password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:minHeight="48dp"
+        android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -140,6 +140,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parent_user_name" />
+        app:layout_constraintTop_toBottomOf="@+id/parent_password" />
 
 </android.support.constraint.ConstraintLayout>
