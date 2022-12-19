@@ -19,6 +19,7 @@
     <string name="register">Register</string>
     <string name="send">Send</string>
     <string name="student_roll_no">Roll Number</string>
+    <string name="staff_id">Staff ID</string>
     <string-array name="degree">
         <item>BE</item>
         <item>ME</item>
