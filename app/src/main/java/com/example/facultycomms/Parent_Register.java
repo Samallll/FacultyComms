@@ -1,12 +1,15 @@
 package com.example.facultycomms;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public abstract class Parent_Register extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
@@ -41,5 +44,72 @@ public abstract class Parent_Register extends AppCompatActivity implements Adapt
         // Apply the adapter to the spinner
         dropdown.setAdapter(adapter);
 
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(student_name.getText().toString().length()<=2)
+                {
+                    Toast.makeText(getApplicationContext(), "Please Enter the Valid Student Name", Toast.LENGTH_LONG).show();
+                }
+                else if((roll_number.getText().toString().length()==0))
+                {
+                    Toast.makeText(getApplicationContext(), "Please Enter the Reg number", Toast.LENGTH_LONG).show();
+                }
+                else if ((user_name.getText().toString().length()==0))
+                {
+                    Toast.makeText(getApplicationContext(), "Please Enter the Username", Toast.LENGTH_LONG).show();
+                }
+                else if ((parent_name.getText().toString().length()==0))
+                {
+                    Toast.makeText(getApplicationContext(), "Please Enter the Parent name", Toast.LENGTH_LONG).show();
+                }
+                else if ((mobile_number.getText().toString().length()==0))
+                {
+                    Toast.makeText(getApplicationContext(), "Please Enter the Mobile Number", Toast.LENGTH_LONG).show();
+                }
+                else if ((email_id.getText().toString().length()==0))
+                {
+                    Toast.makeText(getApplicationContext(), "Please Enter your Mail Address", Toast.LENGTH_LONG).show();
+                }
+                else if ((password.getText().toString().length()==0))
+                {
+                    Toast.makeText(getApplicationContext(), "Please Enter Your Password", Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    String stname=student_name.getText().toString();
+                    String stmno=mobile_number.getText().toString();
+                    String strno=roll_number.getText().toString();
+                    String stpnm=parent_name.getText().toString();
+                    String stuser=user_name.getText().toString();
+                    String stmail=email_id.getText().toString();
+                    String stpass=password.getText().toString();
+                    String stdegree=dropdown.getSelectedItem().toString();
+
+                    userDbHelper.addParent(new Parent(stname, stmail, stmno, stdegree, stpnm, stuser, stpass, strno));
+
+                    Toast.makeText(getApplicationContext(), "You have Registered Successfully", Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(Parent_Register.this, MainActivity.class);
+                    startActivity(i);
+                }
+                dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view,
+                                               int position, long id) {
+
+                        Toast.makeText(getApplicationContext(), dropdown.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                        Toast.makeText(getApplicationContext(),"Please Select an option", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+            }
+        });
     }
 }
